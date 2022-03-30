@@ -13,6 +13,7 @@ public class Main {
 		 
 		 numbers.add(1, 15);
 		 numbers.addFirst(5);
+		 System.out.println(numbers);
 	}
 
 }
