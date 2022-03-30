@@ -1,4 +1,4 @@
-package list.linkedlist.implementation;
+package datastructure;
 
 public class ArrayList {
 
@@ -19,7 +19,7 @@ public class ArrayList {
 	  
 	  public boolean add(int index, Object element) //arraylist에서 값을 추가하는 메소드
 	  {
-		  for(int i = size - 1; i >= index; i--)
+		  for(int i = size - 1; i >= index; i--)	//추가하고자 하는 값 뒤의 데이터들을 오른쪽으로 한칸씩 밈.
 		  {
 			  elementData[i + 1] = elementData[i];
 		  }
@@ -32,7 +32,7 @@ public class ArrayList {
 	  {	  String str = "[";
 	  for(int i = 0; i < size; i++)
 	  {
-		  str += elementData[i];
+		  str += elementData[i];		
 		  if(i < size - 1)
 		  {
 			  str += ",";
@@ -41,4 +41,16 @@ public class ArrayList {
 		  return str + "]";
 	 
 	  }
+	  
+	  public Object remove(int index)
+	  {	Object removed = elementData[index];
+		  for(int i = index + 1; i <= size - 1; i++)
+		  {
+			  elementData[i - 1] = elementData[i];
+		  }
+		  size--;
+		  elementData[size] = null;
+		  return removed;
+	  }
+	  
 }
