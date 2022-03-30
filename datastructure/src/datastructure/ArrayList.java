@@ -116,9 +116,11 @@ public class ArrayList {
 		public void add(Object element)
 		{
 			ArrayList.this.add(nextIndex++, element);
-			
-		
-			
+		}
+		public void remove()
+		{
+			ArrayList.this.remove(nextIndex - 1);
+			nextIndex--;
 		}
 	  
 	  }
